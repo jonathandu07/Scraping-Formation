@@ -112,3 +112,10 @@ footer{
     display: flex;
     align-items: center;
 }
+
+footer p{
+    margin-left: 20px;
+    font-size: 1.2rem;
+    color: #0a0b0a;
+    margin: auto;
+}
