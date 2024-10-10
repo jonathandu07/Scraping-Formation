@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire de connexion</title>
 </head>
+
 <body>
     <h1>Connexion</h1>
     <form id="loginForm">
@@ -18,32 +20,26 @@
     </form>
 
     <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+        // netlify/functions/login.js
+        exports.handler = async function (event, context) {
+            if (event.httpMethod === 'POST') {
+                const data = JSON.parse(event.body);
+                const { username, password } = data;
 
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+                // Ici, vous pouvez ajouter votre logique de traitement des données
+                return {
+                    statusCode: 200,
+                    body: JSON.stringify({ message: `Connexion réussie pour ${username}` })
+                };
+            } else {
+                return {
+                    statusCode: 405,
+                    body: 'Méthode non autorisée'
+                };
+            }
+        };
 
-            const data = {
-                username: username,
-                password: password
-            };
-
-            fetch('https://formation-scraping.netlify.app/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Réponse du serveur:', data);
-            })
-            .catch((error) => {
-                console.error('Erreur:', error);
-            });
-        });
     </script>
 </body>
+
 </html>
