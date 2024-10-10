@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #0a0b0a;
+}
+
+body {
+  background-color: #f7f7ff;
+  width: 100vw;
+}
+
+nav {
+  height: 4rem;
+  background-color: #e5e5e5;
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Kristi", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  margin: auto;
+}
+
+main {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.illustration-content {
+  display: flex;
+  height: 28rem;
+  width: 100%;
+  background-color: white;
+}
+
+.illustration-content img {
+  height: 100%;
+  background-color: transparent;
+  margin: auto;
+}
+
+article {
+  display: flex;
+  width: 62vw;
+  align-self: center;
+  gap: 8vw;
+}
+
+article div {
+  display: flex;
+  width: 20rem;
+  overflow: hidden;
+  height: 16rem;
+  flex-direction: column;
+}
+
+.requestst-div {
+  text-align: center;
+}
+.requestst-div .image-container {
+  width: 100%;
+}
+
+.requestst-div .image-container img {
+  width: 100%;
+}
+
+article div strong {
+  font-size: 2rem;
+  color: #0a0b0a;
+}
+
+.beautiful_soup-div {
+  width: 16rem;
+  text-align: center;
+}
+
+.beautiful_soup-div .image-container {
+  width: 100%;
+}
+
+.beautiful_soup-div .image-container img {
+  width: 100%;
+}
+
+.selenium-div {
+  text-align: center;
+  gap: 2.5rem;
+}
+.selenium-div .image-container {
+  width: 100%;
+}
+
+.selenium-div .image-container img {
+  width: 100%;
+}
+
+footer{
+    display: flex;
+    margin-top: 10vh;
+    height: 4rem;
+    background-color: #e5e5e5;
+    display: flex;
+    align-items: center;
+}
