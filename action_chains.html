@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Chains Demo</title>
+    <style>
+        .button {
+            background-color: #008CBA; /* Couleur bleue */
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        .hovered {
+            background-color: #4CAF50; /* Couleur verte quand survolé */
+        }
+    </style>
+</head>
+<body>
+    <h1>Action Chains Demo</h1>
+    <button id="hover-button" class="button">Cliquez ici</button>
+    <p id="message"></p>
+
+    <script>
+        // Lorsque l'utilisateur clique sur le bouton, un message s'affiche
+        document.getElementById('hover-button').addEventListener('click', function() {
+            document.getElementById('message').textContent = "Bouton cliqué!";
+        });
+    </script>
+</body>
+</html>
