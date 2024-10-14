@@ -1,0 +1,109 @@
+$card_width: 380px;
+$card_height: 220px;
+
+$dark: #0f1017;
+$dark-blue: #33374c;
+$dark-light-blue: #474c65;
+$red: #f6153c;
+$grey: #c1c2d1;
+$bordeaux: #4f0d20;
+
+body {
+  background: #0E101D;
+
+  .cb-card {
+    width: $card_width;
+    height: $card_height;
+    margin: 15vh auto;
+    position: relative;
+    overflow: auto;
+    box-shadow: 0 0 10px rgba(#1B2B34, 0.2);
+  }
+
+  .cb-card-front,
+  .cb-card-back {
+    box-sizing: border-box;
+    position: absolute;
+    width: $card_width;
+    height: $card_height;
+    background: linear-gradient(to bottom right, $dark-blue 40%, darken($dark-blue, 6) 100%);
+    border-radius: 8px;
+    padding: 20px;
+    overflow: auto;
+
+    &.z-index {
+      z-index: 2;
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 30px;
+      background: transparentize(white, 0.95);
+      border-bottom: 5px solid transparentize(white, 0.94);
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      top: 50px;
+      left: 32px;
+      background: transparentize(white, 0.94);
+      width: 60px;
+      height: 40px;
+      border-radius: 4px;
+    }
+  }
+
+  .cb-card-front {
+    left: 0;
+    bottom: 0;
+  }
+
+  .cb-card-back {
+    right: 0;
+    top: 0;
+    box-shadow: 0 0 10px rgba(#1B2B34, 0.1);
+  }
+
+  .input-card-number {
+    position: absolute;
+    bottom: 70px;
+    display: flex;
+
+    input {
+      &:last-child {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .input-card-info {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+
+    input {
+      font-size: 15px;
+    }
+  }
+
+  input {
+    box-sizing: border-box;
+    border: transparent 2px solid;
+    background: transparent;
+    outline: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 6px;
+
+    &:focus {
+      background: $dark-light-blue;
+      border: lighten($dark-light-blue, 20) 2px solid;
+      box-shadow: inset 0 0 5px rgba($dark-blue, 0.3);
+    }
+  }
+}

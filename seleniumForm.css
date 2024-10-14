@@ -1,115 +1,87 @@
-.card{
-    border-radius: 4%;
-    box-shadow: 5px 5px 6px 3px #ccc;
-    z-index: 1;
-  }
-  .card-back{
-    border-radius: 4%;
-    z-index: 1;
-    transform: rotateY(180deg);
-  }
-  .card .chip, .card-back .chip{
-    width: 18%;
-    height: 18%;
-    position: absolute;
-    background: #ddd;
-    border-radius: 5%;
-    top: 10%;
-    left: 10%;
-  }
-  .card-back .chip{
-    top: 70% !important;
-    left: 5% !important;
-  }
-  .chip .mc{
-    width: 65%;
-    height: 70%;
-    position: absolute;
-    background: #aaa;
-    top: 15%;
-    left: 5%;
-  }
-  .card .logo{
-    width: 20%;
-    height: 100%;
-    position: absolute;
-    top: 10%;
-    right: 10%;
-    display: none;
-  }
-  .card .number{
-    width: 80%;
-    height: 20%;
-    position: absolute;
-    top: 45%;
-    left: 10%;
-    color: #ddd;
-    text-align: center;
-  }
-  .card .name{
-    width: 60%;
-    height: auto;
-    position: absolute;
-    left: 5%;
-    bottom: 15%;
-    color: #ddd;
-  }
-  .card .date{
-    width: 30%;
-    height: auto;
-    position: absolute;
-    right: 10%;
-    bottom: 10%;
-  }
-  .card .date .left{
-    width: 30%;
-    display: inline-block;
-    float: left;
-    padding-top: 10%;
-  }
-  .card .date .right{
-    width: 70%;
-    display: inline-block;
-    float: right;
-    text-align: center;
-  }
-  .card .date .right span{
-    color: #ddd;
-  }
-  .card-back .magnet{
-    width: 100%;
-    height: 20%;
-    position: absolute;
-    background: #000;
-    top: 15%;
-  }
-  .card-back .sign{
-    width: 65%;
-    height: 15%;
-    position: absolute;
-    background: #fff;
-    top: 40%;
-    left: 5%;
-  }
-  .card-back .cvc{
-    width: 25%;
-    height: auto;
-    position: absolute;
-    color: #fff;
-    top: 40%;
-    right: 5%;
-    text-align: center;
-  }
-  .card-back .copyright{
-    width: 65%;
-    height: 20%;
-    position: absolute;
-    top: 70%;
-    right: 5%;
-    color: #999;
-    text-align: justify;
-  }
-  .circles { 
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PSczJyBjeT0nMycgcj0nMycgZmlsbD0nYmxhY2snLz4KPC9zdmc+Cg==") !important; 
-    background-repeat: repeat; 
-  }
+body {
+  background: #0E101D;
+}
+body .cb-card {
+  width: 380px;
+  height: 220px;
+  margin: 15vh auto;
+  position: relative;
+  overflow: auto;
+  box-shadow: 0 0 10px rgba(27, 43, 52, 0.2);
+}
+body .cb-card-front,
+body .cb-card-back {
+  box-sizing: border-box;
+  position: absolute;
+  width: 380px;
+  height: 220px;
+  background: linear-gradient(to bottom right, #33374c 40%, #272a3a 100%);
+  border-radius: 8px;
+  padding: 20px;
+  overflow: auto;
+}
+body .cb-card-front.z-index,
+body .cb-card-back.z-index {
+  z-index: 2;
+}
+body .cb-card-front:before,
+body .cb-card-back:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 5px solid rgba(255, 255, 255, 0.06);
+}
+body .cb-card-front:after,
+body .cb-card-back:after {
+  position: absolute;
+  content: "";
+  top: 50px;
+  left: 32px;
+  background: rgba(255, 255, 255, 0.06);
+  width: 60px;
+  height: 40px;
+  border-radius: 4px;
+}
+body .cb-card-front {
+  left: 0;
+  bottom: 0;
+}
+body .cb-card-back {
+  right: 0;
+  top: 0;
+  box-shadow: 0 0 10px rgba(27, 43, 52, 0.1);
+}
+body .input-card-number {
+  position: absolute;
+  bottom: 70px;
+  display: flex;
+}
+body .input-card-number input:last-child {
+  font-size: 15px;
+}
+body .input-card-info {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+}
+body .input-card-info input {
+  font-size: 15px;
+}
+body input {
+  box-sizing: border-box;
+  border: transparent 2px solid;
+  background: transparent;
+  outline: none;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+body input:focus {
+  background: #474c65;
+  border: #747b9e 2px solid;
+  box-shadow: inset 0 0 5px rgba(51, 55, 76, 0.3);
+}/*# sourceMappingURL=SeleniumForm.css.map */
