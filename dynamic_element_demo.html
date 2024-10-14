@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration des Waits - Selenium</title>
+    <style>
+        #myDynamicElement {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: lightgreen;
+            border: 1px solid green;
+        }
+    </style>
+    <script>
+        function showElement() {
+            setTimeout(function() {
+                document.getElementById("myDynamicElement").style.display = "block";
+            }, 5000);  // L'élément apparaîtra après 5 secondes
+        }
+    </script>
+</head>
+<body onload="showElement()">
+    <h1>Démonstration de l'attente explicite dans Selenium</h1>
+    <p>L'élément ci-dessous apparaîtra après 5 secondes :</p>
+    <div id="myDynamicElement">Je suis un élément dynamique !</div>
+</body>
+</html>
