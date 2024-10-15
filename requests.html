@@ -81,14 +81,16 @@
     <!-- Formulaire de contact -->
     <section class="max-w-4xl mx-auto mt-8 p-6 bg-white shadow-md rounded-lg">
         <h2 class="text-xl font-bold mb-4">Contactez-nous</h2>
-        <form action="https://formation-scraping.netlify.app/requests" method="POST">
+        <form id="contactForm" action="https://formation-scraping.netlify.app/requests" method="POST">
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 font-bold mb-2">Nom :</label>
                 <input type="text" id="name" name="name" class="border border-gray-300 p-2 w-full rounded" required>
+                <p id="nameError" class="text-red-500 text-sm hidden">Veuillez entrer votre nom.</p>
             </div>
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 font-bold mb-2">Email :</label>
                 <input type="email" id="email" name="email" class="border border-gray-300 p-2 w-full rounded" required>
+                <p id="emailError" class="text-red-500 text-sm hidden">Veuillez entrer un email valide.</p>
             </div>
             <div class="mb-4">
                 <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Envoyer</button>
@@ -101,7 +103,38 @@
         <p class="text-center">&copy; 2024 Découverte de l'Ardèche. Tous droits réservés.</p>
     </footer>
 
-    <div id="extwaiokist" v="12345" class="hidden">Ceci est une div avec un ID spécifique.</div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            // Initialisation
+            let valid = true;
+
+            // Validation du champ nom
+            const nameField = document.getElementById('name');
+            const nameError = document.getElementById('nameError');
+            if (nameField.value.trim() === '') {
+                nameError.classList.remove('hidden');
+                valid = false;
+            } else {
+                nameError.classList.add('hidden');
+            }
+
+            // Validation du champ email
+            const emailField = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailField.value.trim())) {
+                emailError.classList.remove('hidden');
+                valid = false;
+            } else {
+                emailError.classList.add('hidden');
+            }
+
+            // Si un champ est invalide, on empêche la soumission du formulaire
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    </script>
 
 </body>
 </html>
