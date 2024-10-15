@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercices Selenium - Formation Scraping</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100 text-gray-900">
     <header class="bg-blue-600 text-white py-6">
         <h1 class="text-center text-3xl font-bold">Pratique avec Selenium</h1>
@@ -13,7 +15,18 @@
     </header>
 
     <main class="max-w-4xl mx-auto mt-10 space-y-8">
-
+        <section class="bg-white shadow-md rounded-lg p-6">
+            <a href="/selenium_form_demo.html">
+                <h2>
+                    Formulaire demo
+                </h2>
+            </a>
+            <a href="/dynamic_element_demo.html">
+                <h2>
+                    Démonstration des Waits - Selenium
+                </h2>
+            </a>
+        </section>
         <!-- Exercice 1 : Page de titre -->
         <section id="exercice1" class="bg-white shadow-md rounded-lg p-6">
             <h2 class="text-xl font-semibold mb-4">Exercice 1 : Page de titre</h2>
@@ -44,7 +57,8 @@
         <section id="exercice4" class="bg-white shadow-md rounded-lg p-6">
             <h2 class="text-xl font-semibold mb-4">Exercice 4 : Attente d'un élément dynamique</h2>
             <p>Objectif : Attendre l'apparition de cet élément avec Selenium :</p>
-            <button id="dynamicElement" class="hidden bg-blue-500 text-white px-4 py-2 mt-4 rounded">Élément Dynamique</button>
+            <button id="dynamicElement" class="hidden bg-blue-500 text-white px-4 py-2 mt-4 rounded">Élément
+                Dynamique</button>
             <script>
                 setTimeout(() => {
                     document.getElementById('dynamicElement').classList.remove('hidden');
@@ -77,7 +91,8 @@
         <section id="exercice8" class="bg-white shadow-md rounded-lg p-6">
             <h2 class="text-xl font-semibold mb-4">Exercice 8 : Utiliser une attente implicite</h2>
             <p>Objectif : Rechercher cet élément avec une attente implicite :</p>
-            <button id="dynamicElement2" class="hidden bg-red-500 text-white px-4 py-2 mt-4 rounded">Élément Dynamique 2</button>
+            <button id="dynamicElement2" class="hidden bg-red-500 text-white px-4 py-2 mt-4 rounded">Élément Dynamique
+                2</button>
             <script>
                 setTimeout(() => {
                     document.getElementById('dynamicElement2').classList.remove('hidden');
@@ -100,7 +115,8 @@
         <section id="exercice10" class="bg-white shadow-md rounded-lg p-6">
             <h2 class="text-xl font-semibold mb-4">Exercice 10 : Simuler un double clic</h2>
             <p>Objectif : Simuler un double clic sur ce bouton :</p>
-            <button id="double-click-button" class="bg-purple-500 text-white px-4 py-2 mt-4 rounded">Double clique-moi</button>
+            <button id="double-click-button" class="bg-purple-500 text-white px-4 py-2 mt-4 rounded">Double
+                clique-moi</button>
         </section>
 
     </main>
@@ -110,4 +126,5 @@
     </footer>
 
 </body>
+
 </html>
