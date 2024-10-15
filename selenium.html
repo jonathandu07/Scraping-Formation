@@ -3,87 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercices Selenium</title>
+    <title>Exercices Selenium - Formation Scraping</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-900">
-
-    <!-- Titre principal -->
     <header class="bg-blue-600 text-white py-6">
         <h1 class="text-center text-3xl font-bold">Pratique avec Selenium</h1>
-        <p class="text-center mt-2">Exercez-vous à interagir avec des pages dynamiques en utilisant Selenium.</p>
+        <p class="text-center mt-2">Page web pour pratiquer les interactions avec Selenium</p>
     </header>
-    <a href="/selenium_form_demo.html">
-        <h2>
-            Formulaire demo
-        </h2>
-    </a>
-    <a href="/dynamic_element_demo.html">
-        <h2>
-            Démonstration des Waits - Selenium
-        </h2>
-    </a>
-    <!-- Liste des exercices -->
-    <section class="max-w-4xl mx-auto mt-10 space-y-8">
 
-        <!-- Exercice 1 -->
-        <div class="bg-white shadow-md rounded-lg p-6">
-            <h2 class="text-xl font-semibold mb-4">Exercice 1 : Ouvrir une page web et récupérer son titre</h2>
-            <p>Objectif : Ouvrir une page web avec Selenium et afficher son titre dans la console.</p>
-            <pre class="bg-gray-100 p-4 rounded mt-4"><code>from selenium import webdriver
+    <main class="max-w-4xl mx-auto mt-10 space-y-8">
 
-driver = webdriver.Chrome()
-driver.get("https://formation-scraping.netlify.app/")
-print(driver.title)
-driver.quit()</code></pre>
-        </div>
+        <!-- Exercice 1 : Page de titre -->
+        <section id="exercice1" class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Exercice 1 : Page de titre</h2>
+            <p>Objectif : Ouvrir cette page et récupérer son titre avec Selenium.</p>
+        </section>
 
-        <!-- Exercice 2 -->
-        <div class="bg-white shadow-md rounded-lg p-6">
+        <!-- Exercice 2 : Lien à cliquer -->
+        <section id="exercice2" class="bg-white shadow-md rounded-lg p-6">
             <h2 class="text-xl font-semibold mb-4">Exercice 2 : Cliquer sur un lien</h2>
-            <p>Objectif : Localiser et cliquer sur un lien de la page en utilisant By.ID ou By.CLASS_NAME.</p>
-            <pre class="bg-gray-100 p-4 rounded mt-4"><code>from selenium import webdriver
-from selenium.webdriver.common.by import By
-import time
+            <p>Objectif : Cliquer sur ce lien avec Selenium :</p>
+            <a href="https://www.example.com" class="selenium-link text-blue-600 underline">Visiter un site externe</a>
+        </section>
 
-driver = webdriver.Chrome()
-driver.get("https://formation-scraping.netlify.app/")
-time.sleep(3)
-
-try:
-    link = driver.find_element(By.CLASS_NAME, "selenium-link")
-    link.click()
-    print("Lien cliqué.")
-except Exception as e:
-    print(f"Erreur : {e}")
-
-driver.quit()</code></pre>
-        </div>
-
-        <!-- Autres exercices... -->
-        <div class="bg-white shadow-md rounded-lg p-6">
+        <!-- Exercice 3 : Formulaire -->
+        <section id="exercice3" class="bg-white shadow-md rounded-lg p-6">
             <h2 class="text-xl font-semibold mb-4">Exercice 3 : Remplir un formulaire</h2>
-            <p>Objectif : Localiser un champ de formulaire par ID et y entrer du texte.</p>
-            <pre class="bg-gray-100 p-4 rounded mt-4"><code>from selenium import webdriver
-from selenium.webdriver.common.by import By
+            <p>Objectif : Remplir le formulaire suivant avec Selenium :</p>
+            <form action="#" class="mt-4">
+                <label for="username" class="block text-gray-700">Nom d'utilisateur :</label>
+                <input type="text" id="username" class="border border-gray-300 p-2 w-full rounded mt-2">
 
-driver = webdriver.Chrome()
-driver.get("https://formation-scraping.netlify.app/form_page.html")
+                <label for="password" class="block text-gray-700 mt-4">Mot de passe :</label>
+                <input type="password" id="password" class="border border-gray-300 p-2 w-full rounded mt-2">
+            </form>
+        </section>
 
-username_field = driver.find_element(By.ID, "username")
-username_field.send_keys("mon_nom_utilisateur")
+        <!-- Exercice 4 : Élément dynamique -->
+        <section id="exercice4" class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Exercice 4 : Attente d'un élément dynamique</h2>
+            <p>Objectif : Attendre l'apparition de cet élément avec Selenium :</p>
+            <button id="dynamicElement" class="hidden bg-blue-500 text-white px-4 py-2 mt-4 rounded">Élément Dynamique</button>
+            <script>
+                setTimeout(() => {
+                    document.getElementById('dynamicElement').classList.remove('hidden');
+                }, 5000); // L'élément apparaît après 5 secondes
+            </script>
+        </section>
 
-password_field = driver.find_element(By.ID, "password")
-password_field.send_keys("mon_mot_de_passe")
+        <!-- Exercice 5 : Actions de souris -->
+        <section id="exercice5" class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Exercice 5 : Survoler un élément</h2>
+            <p>Objectif : Simuler le survol de cet élément avec Selenium :</p>
+            <button id="hover-button" class="bg-green-500 text-white px-4 py-2 rounded">Survole-moi !</button>
+        </section>
 
-driver.quit()</code></pre>
-        </div>
+        <!-- Exercice 6 : Extraire du texte -->
+        <section id="exercice6" class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Exercice 6 : Extraire du texte d'un paragraphe</h2>
+            <p>Objectif : Récupérer le texte suivant avec Selenium :</p>
+            <p id="sample-text" class="text-gray-700">Ceci est un paragraphe à extraire avec Selenium.</p>
+        </section>
 
-        <!-- Ajoutez tous les autres exercices dans des sections similaires -->
+        <!-- Exercice 7 : Attributs d'une image -->
+        <section id="exercice7" class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Exercice 7 : Récupérer l'attribut d'une image</h2>
+            <p>Objectif : Récupérer l'attribut src de l'image ci-dessous avec Selenium :</p>
+            <img src="https://via.placeholder.com/150" alt="Exemple d'image" class="mt-4 rounded">
+        </section>
 
-    </section>
+        <!-- Exercice 8 : Attente implicite -->
+        <section id="exercice8" class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Exercice 8 : Utiliser une attente implicite</h2>
+            <p>Objectif : Rechercher cet élément avec une attente implicite :</p>
+            <button id="dynamicElement2" class="hidden bg-red-500 text-white px-4 py-2 mt-4 rounded">Élément Dynamique 2</button>
+            <script>
+                setTimeout(() => {
+                    document.getElementById('dynamicElement2').classList.remove('hidden');
+                }, 3000); // Cet élément apparaît après 3 secondes
+            </script>
+        </section>
 
-    <!-- Pied de page -->
+        <!-- Exercice 9 : Extraire plusieurs éléments -->
+        <section id="exercice9" class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Exercice 9 : Récupérer le texte de plusieurs paragraphes</h2>
+            <p>Objectif : Récupérer le texte de ces paragraphes :</p>
+            <div class="mt-4">
+                <p class="text-gray-700">Premier paragraphe</p>
+                <p class="text-gray-700">Deuxième paragraphe</p>
+                <p class="text-gray-700">Troisième paragraphe</p>
+            </div>
+        </section>
+
+        <!-- Exercice 10 : Double clic -->
+        <section id="exercice10" class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Exercice 10 : Simuler un double clic</h2>
+            <p>Objectif : Simuler un double clic sur ce bouton :</p>
+            <button id="double-click-button" class="bg-purple-500 text-white px-4 py-2 mt-4 rounded">Double clique-moi</button>
+        </section>
+
+    </main>
+
     <footer class="bg-blue-600 text-white py-4 mt-10">
         <p class="text-center">&copy; 2024 Formation Scraping. Tous droits réservés.</p>
     </footer>
