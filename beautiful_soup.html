@@ -4,37 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventaire des voitures</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Inventaire des voitures</h1>
+<body class="bg-gray-100 text-gray-900">
 
-    <div class="voiture">
-        <h2>Marque : Tesla</h2>
-        <p>Modèle : Model S</p>
-        <p>Prix : 80,000€</p>
-        <a href="https://www.tesla.com/models" class="lien">En savoir plus</a>
-    </div>
+    <!-- Titre principal -->
+    <header class="bg-blue-600 text-white py-6">
+        <h1 class="text-center text-3xl font-bold">Inventaire des voitures</h1>
+    </header>
 
-    <div class="voiture">
-        <h2>Marque : Ford</h2>
-        <p>Modèle : Mustang</p>
-        <p>Prix : 55,000€</p>
-        <a href="https://www.ford.com/cars/mustang/" class="lien">En savoir plus</a>
-    </div>
+    <!-- Conteneur principal -->
+    <main class="max-w-4xl mx-auto mt-10 space-y-8">
+        <!-- Section pour chaque voiture -->
+        <div class="voiture bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-2">Marque : Tesla</h2>
+            <p class="text-gray-700">Modèle : Model S</p>
+            <p class="text-gray-700">Prix : <span class="font-bold">80,000€</span></p>
+            <a href="https://www.tesla.com/models" class="lien text-blue-600 hover:text-blue-800 underline mt-4 inline-block">En savoir plus</a>
+        </div>
 
-    <div class="voiture">
-        <h2>Marque : BMW</h2>
-        <p>Modèle : i8</p>
-        <p>Prix : 120,000€</p>
-        <a href="https://www.bmw.com/i8" class="lien special">En savoir plus</a>
-    </div>
+        <div class="voiture bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-2">Marque : Ford</h2>
+            <p class="text-gray-700">Modèle : Mustang</p>
+            <p class="text-gray-700">Prix : <span class="font-bold">55,000€</span></p>
+            <a href="https://www.ford.com/cars/mustang/" class="lien text-blue-600 hover:text-blue-800 underline mt-4 inline-block">En savoir plus</a>
+        </div>
 
-    <div class="voiture">
-        <h2>Marque : Audi</h2>
-        <p>Modèle : A4</p>
-        <p>Prix : 40,000€</p>
-        <a href="https://www.audi.fr/a4" class="lien">En savoir plus</a>
-    </div>
+        <div class="voiture bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-2">Marque : BMW</h2>
+            <p class="text-gray-700">Modèle : i8</p>
+            <p class="text-gray-700">Prix : <span class="font-bold">120,000€</span></p>
+            <a href="https://www.bmw.com/i8" class="lien special text-blue-600 hover:text-blue-800 underline mt-4 inline-block">En savoir plus</a>
+        </div>
+
+        <div class="voiture bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-2">Marque : Audi</h2>
+            <p class="text-gray-700">Modèle : A4</p>
+            <p class="text-gray-700">Prix : <span class="font-bold">40,000€</span></p>
+            <a href="https://www.audi.fr/a4" class="lien text-blue-600 hover:text-blue-800 underline mt-4 inline-block">En savoir plus</a>
+        </div>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="bg-blue-600 text-white py-4 mt-10">
+        <p class="text-center">&copy; 2024 Inventaire des voitures. Tous droits réservés.</p>
+    </footer>
 
 </body>
 </html>
