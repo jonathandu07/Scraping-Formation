@@ -1,12 +1,92 @@
-Bienvenue sur la page selenium
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercices Selenium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
 
-<a href="/selenium_form_demo.html">
-    <h2>
-        Formulaire demo
-    </h2>
-</a>
-<a href="/dynamic_element_demo.html">
-    <h2>
-        Démonstration des Waits - Selenium
-    </h2>
-</a>
+    <!-- Titre principal -->
+    <header class="bg-blue-600 text-white py-6">
+        <h1 class="text-center text-3xl font-bold">Pratique avec Selenium</h1>
+        <p class="text-center mt-2">Exercez-vous à interagir avec des pages dynamiques en utilisant Selenium.</p>
+    </header>
+    <a href="/selenium_form_demo.html">
+        <h2>
+            Formulaire demo
+        </h2>
+    </a>
+    <a href="/dynamic_element_demo.html">
+        <h2>
+            Démonstration des Waits - Selenium
+        </h2>
+    </a>
+    <!-- Liste des exercices -->
+    <section class="max-w-4xl mx-auto mt-10 space-y-8">
+
+        <!-- Exercice 1 -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Exercice 1 : Ouvrir une page web et récupérer son titre</h2>
+            <p>Objectif : Ouvrir une page web avec Selenium et afficher son titre dans la console.</p>
+            <pre class="bg-gray-100 p-4 rounded mt-4"><code>from selenium import webdriver
+
+driver = webdriver.Chrome()
+driver.get("https://formation-scraping.netlify.app/")
+print(driver.title)
+driver.quit()</code></pre>
+        </div>
+
+        <!-- Exercice 2 -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Exercice 2 : Cliquer sur un lien</h2>
+            <p>Objectif : Localiser et cliquer sur un lien de la page en utilisant By.ID ou By.CLASS_NAME.</p>
+            <pre class="bg-gray-100 p-4 rounded mt-4"><code>from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+driver = webdriver.Chrome()
+driver.get("https://formation-scraping.netlify.app/")
+time.sleep(3)
+
+try:
+    link = driver.find_element(By.CLASS_NAME, "selenium-link")
+    link.click()
+    print("Lien cliqué.")
+except Exception as e:
+    print(f"Erreur : {e}")
+
+driver.quit()</code></pre>
+        </div>
+
+        <!-- Autres exercices... -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Exercice 3 : Remplir un formulaire</h2>
+            <p>Objectif : Localiser un champ de formulaire par ID et y entrer du texte.</p>
+            <pre class="bg-gray-100 p-4 rounded mt-4"><code>from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver.get("https://formation-scraping.netlify.app/form_page.html")
+
+username_field = driver.find_element(By.ID, "username")
+username_field.send_keys("mon_nom_utilisateur")
+
+password_field = driver.find_element(By.ID, "password")
+password_field.send_keys("mon_mot_de_passe")
+
+driver.quit()</code></pre>
+        </div>
+
+        <!-- Ajoutez tous les autres exercices dans des sections similaires -->
+
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="bg-blue-600 text-white py-4 mt-10">
+        <p class="text-center">&copy; 2024 Formation Scraping. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
