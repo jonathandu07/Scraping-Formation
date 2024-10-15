@@ -37,51 +37,10 @@
         </table>
     </section>
 
-    <!-- Sites touristiques -->
-    <section class="max-w-4xl mx-auto mt-8 p-6 bg-white shadow-md rounded-lg">
-        <h2 class="text-xl font-bold mb-4">Sites touristiques</h2>
-        <ul class="list-disc ml-6 text-gray-700 space-y-2">
-            <li>Gorges de l'Ardèche</li>
-            <li>Mont Gerbier de Jonc</li>
-            <li>Château de Crussol</li>
-            <li>Aven d'Orgnac</li>
-            <li>Vallon-Pont-d'Arc</li>
-        </ul>
-    </section>
-
-    <!-- Préparation de la visite -->
-    <section class="max-w-4xl mx-auto mt-8 p-6 bg-white shadow-md rounded-lg">
-        <h2 class="text-xl font-bold mb-4">Préparation de votre visite</h2>
-        <table class="preparation table-auto w-full">
-            <tbody>
-                <tr>
-                    <td class="preparation_etape px-4 py-2 text-gray-700">Réserver votre hébergement à l'avance.</td>
-                </tr>
-                <tr>
-                    <td class="preparation_etape px-4 py-2 text-gray-700">Prévoir une voiture ou un moyen de transport pour se déplacer entre les sites.</td>
-                </tr>
-                <tr>
-                    <td class="preparation_etape px-4 py-2 text-gray-700">Emporter de bonnes chaussures pour la randonnée.</td>
-                </tr>
-                <tr>
-                    <td class="preparation_etape px-4 py-2 text-gray-700">Planifier des visites guidées pour les sites historiques.</td>
-                </tr>
-                <tr>
-                    <td class="preparation_etape px-4 py-2 text-gray-700">Ne pas oublier de goûter aux spécialités locales, comme la crème de marrons.</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <!-- Image -->
-    <section class="max-w-4xl mx-auto mt-8">
-        <img src="https://cdn.prod.website-files.com/5fe9ad4805bc9a4cf17e4a6a/60c745e5b87da1fae06a99ca_pont-darc_ardeche.jpg" class="info w-full rounded-lg shadow-md" alt="Paysage de l'Ardèche">
-    </section>
-
     <!-- Formulaire de contact -->
     <section class="max-w-4xl mx-auto mt-8 p-6 bg-white shadow-md rounded-lg">
         <h2 class="text-xl font-bold mb-4">Contactez-nous</h2>
-        <form id="contactForm" action="https://formation-scraping.netlify.app/requests" method="POST">
+        <form id="contactForm">
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 font-bold mb-2">Nom :</label>
                 <input type="text" id="name" name="name" class="border border-gray-300 p-2 w-full rounded" required>
@@ -96,6 +55,13 @@
                 <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Envoyer</button>
             </div>
         </form>
+
+        <!-- Section pour afficher les données soumises -->
+        <div id="submittedData" class="mt-6 p-4 bg-gray-100 rounded shadow-md hidden">
+            <h3 class="text-lg font-bold">Données envoyées :</h3>
+            <p><strong>Nom :</strong> <span id="submittedName"></span></p>
+            <p><strong>Email :</strong> <span id="submittedEmail"></span></p>
+        </div>
     </section>
 
     <!-- Pied de page -->
@@ -105,34 +71,18 @@
 
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(event) {
-            // Initialisation
-            let valid = true;
+            event.preventDefault(); // Empêche la soumission du formulaire
 
-            // Validation du champ nom
-            const nameField = document.getElementById('name');
-            const nameError = document.getElementById('nameError');
-            if (nameField.value.trim() === '') {
-                nameError.classList.remove('hidden');
-                valid = false;
-            } else {
-                nameError.classList.add('hidden');
-            }
+            // Récupérer les valeurs des champs
+            const nameValue = document.getElementById('name').value;
+            const emailValue = document.getElementById('email').value;
 
-            // Validation du champ email
-            const emailField = document.getElementById('email');
-            const emailError = document.getElementById('emailError');
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(emailField.value.trim())) {
-                emailError.classList.remove('hidden');
-                valid = false;
-            } else {
-                emailError.classList.add('hidden');
-            }
+            // Afficher les valeurs dans la section des données soumises
+            document.getElementById('submittedName').textContent = nameValue;
+            document.getElementById('submittedEmail').textContent = emailValue;
 
-            // Si un champ est invalide, on empêche la soumission du formulaire
-            if (!valid) {
-                event.preventDefault();
-            }
+            // Rendre visible la section des données soumises
+            document.getElementById('submittedData').classList.remove('hidden');
         });
     </script>
 
