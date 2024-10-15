@@ -37,54 +37,87 @@
         </table>
     </section>
 
-    <!-- Formulaire de contact -->
+    <!-- Sites touristiques -->
+    <section class="max-w-4xl mx-auto mt-8 p-6 bg-white shadow-md rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Sites touristiques</h2>
+        <ul class="list-disc ml-6 text-gray-700 space-y-2">
+            <li>Gorges de l'Ardèche</li>
+            <li>Mont Gerbier de Jonc</li>
+            <li>Château de Crussol</li>
+            <li>Aven d'Orgnac</li>
+            <li>Vallon-Pont-d'Arc</li>
+        </ul>
+    </section>
+
+    <!-- Préparation de la visite -->
+    <section class="max-w-4xl mx-auto mt-8 p-6 bg-white shadow-md rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Préparation de votre visite</h2>
+        <table class="preparation table-auto w-full">
+            <tbody>
+                <tr>
+                    <td class="preparation_etape px-4 py-2 text-gray-700">Réserver votre hébergement à l'avance.</td>
+                </tr>
+                <tr>
+                    <td class="preparation_etape px-4 py-2 text-gray-700">Prévoir une voiture ou un moyen de transport pour se déplacer entre les sites.</td>
+                </tr>
+                <tr>
+                    <td class="preparation_etape px-4 py-2 text-gray-700">Emporter de bonnes chaussures pour la randonnée.</td>
+                </tr>
+                <tr>
+                    <td class="preparation_etape px-4 py-2 text-gray-700">Planifier des visites guidées pour les sites historiques.</td>
+                </tr>
+                <tr>
+                    <td class="preparation_etape px-4 py-2 text-gray-700">Ne pas oublier de goûter aux spécialités locales, comme la crème de marrons.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Image -->
+    <section class="max-w-4xl mx-auto mt-8">
+        <img src="https://cdn.prod.website-files.com/5fe9ad4805bc9a4cf17e4a6a/60c745e5b87da1fae06a99ca_pont-darc_ardeche.jpg" class="info w-full rounded-lg shadow-md" alt="Paysage de l'Ardèche">
+    </section>
+
     <section class="max-w-4xl mx-auto mt-8 p-6 bg-white shadow-md rounded-lg">
         <h2 class="text-xl font-bold mb-4">Contactez-nous</h2>
         <form id="contactForm">
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 font-bold mb-2">Nom :</label>
                 <input type="text" id="name" name="name" class="border border-gray-300 p-2 w-full rounded" required>
-                <p id="nameError" class="text-red-500 text-sm hidden">Veuillez entrer votre nom.</p>
             </div>
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 font-bold mb-2">Email :</label>
                 <input type="email" id="email" name="email" class="border border-gray-300 p-2 w-full rounded" required>
-                <p id="emailError" class="text-red-500 text-sm hidden">Veuillez entrer un email valide.</p>
             </div>
             <div class="mb-4">
                 <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Envoyer</button>
             </div>
         </form>
-
-        <!-- Section pour afficher les données soumises -->
-        <div id="submittedData" class="mt-6 p-4 bg-gray-100 rounded shadow-md hidden">
-            <h3 class="text-lg font-bold">Données envoyées :</h3>
-            <p><strong>Nom :</strong> <span id="submittedName"></span></p>
-            <p><strong>Email :</strong> <span id="submittedEmail"></span></p>
-        </div>
     </section>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche la soumission du formulaire
+    
+            // Récupérer les valeurs des champs
+            const nameValue = document.getElementById('name').value;
+            const emailValue = document.getElementById('email').value;
+    
+            // Afficher les données directement dans les champs
+            alert(`Nom: ${nameValue}\nEmail: ${emailValue}`);
+    
+            // Réinitialiser les champs avec les données soumises
+            document.getElementById('name').value = nameValue;
+            document.getElementById('email').value = emailValue;
+        });
+    </script>
 
     <!-- Pied de page -->
     <footer class="bg-green-600 text-white py-4 mt-10">
         <p class="text-center">&copy; 2024 Découverte de l'Ardèche. Tous droits réservés.</p>
     </footer>
 
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Empêche la soumission du formulaire
-
-            // Récupérer les valeurs des champs
-            const nameValue = document.getElementById('name').value;
-            const emailValue = document.getElementById('email').value;
-
-            // Afficher les valeurs dans la section des données soumises
-            document.getElementById('submittedName').textContent = nameValue;
-            document.getElementById('submittedEmail').textContent = emailValue;
-
-            // Rendre visible la section des données soumises
-            document.getElementById('submittedData').classList.remove('hidden');
-        });
-    </script>
+    <div id="extwaiokist" v="12345" class="hidden">Ceci est une div avec un ID spécifique.</div>
 
 </body>
 </html>
