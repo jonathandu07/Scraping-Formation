@@ -4,57 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Découverte de l'Ardèche</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Visite de l'Ardèche</h1>
-    
-    <p class="description">L'Ardèche est une région magnifique située dans le sud-est de la France, connue pour ses paysages naturels, ses rivières et ses villages pittoresques.</p>
-    
-    <table class="info">
-        <tr>
-            <td>Difficulté : Facile</td>
-        </tr>
-        <tr>
-            <td>Temps de visite conseillé : 2 jours</td>
-        </tr>
-        <tr>
-            <td>Nombre de sites à visiter : 10</td>
-        </tr>
-    </table>
-    
-    <div class="sites-touristiques">
-        <h2>Sites touristiques</h2>
-        <p>Gorges de l'Ardèche</p>
-        <p>Mont Gerbier de Jonc</p>
-        <p>Château de Crussol</p>
-        <p>Aven d'Orgnac</p>
-        <p>Vallon-Pont-d'Arc</p>
-    </div>
-    
-    <table class="preparation">
-        <h2>Préparation de votre visite</h2>
-        <tr>
-            <td class="preparation_etape">Réserver votre hébergement à l'avance.</td>
-        </tr>
-        <tr>
-            <td class="preparation_etape">Prévoir une voiture ou un moyen de transport pour se déplacer entre les sites.</td>
-        </tr>
-        <tr>
-            <td class="preparation_etape">Emporter de bonnes chaussures pour la randonnée.</td>
-        </tr>
-        <tr>
-            <td class="preparation_etape">Planifier des visites guidées pour les sites historiques.</td>
-        </tr>
-        <tr>
-            <td class="preparation_etape">Ne pas oublier de goûter aux spécialités locales, comme la crème de marrons.</td>
-        </tr>
-    </table>
+<body class="bg-gray-100 text-gray-900">
 
-    <img src="https://exemple.com/images/ardeche_paysage.jpg" class="info" alt="Paysage de l'Ardèche">
+    <!-- Titre principal -->
+    <header class="bg-green-600 text-white py-6">
+        <h1 class="text-center text-3xl font-bold">Visite de l'Ardèche</h1>
+    </header>
 
-    <!-- L'Ardèche est une destination incroyable pour les amoureux de la nature ! -->
-    
-    <div id="extwaiokist" v="12345">Ceci est une div avec un ID spécifique.</div>
+    <!-- Section de description -->
+    <section class="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+        <p class="description text-lg leading-relaxed text-gray-700">
+            L'Ardèche est une région magnifique située dans le sud-est de la France, connue pour ses paysages naturels, ses rivières et ses villages pittoresques.
+        </p>
+    </section>
+
+    <!-- Informations supplémentaires -->
+    <section class="max-w-4xl mx-auto mt-8">
+        <table class="info table-auto w-full bg-white shadow-md rounded-lg overflow-hidden">
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2 text-gray-700">Difficulté : <span class="font-bold">Facile</span></td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2 text-gray-700">Temps de visite conseillé : <span class="font-bold">2 jours</span></td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2 text-gray-700">Nombre de sites à visiter : <span class="font-bold">10</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Sites touristiques -->
+    <section class="max-w-4xl mx-auto mt-8 p-6 bg-white shadow-md rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Sites touristiques</h2>
+        <ul class="list-disc ml-6 text-gray-700 space-y-2">
+            <li>Gorges de l'Ardèche</li>
+            <li>Mont Gerbier de Jonc</li>
+            <li>Château de Crussol</li>
+            <li>Aven d'Orgnac</li>
+            <li>Vallon-Pont-d'Arc</li>
+        </ul>
+    </section>
+
+    <!-- Préparation de la visite -->
+    <section class="max-w-4xl mx-auto mt-8 p-6 bg-white shadow-md rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Préparation de votre visite</h2>
+        <table class="preparation table-auto w-full">
+            <tbody>
+                <tr>
+                    <td class="preparation_etape px-4 py-2 text-gray-700">Réserver votre hébergement à l'avance.</td>
+                </tr>
+                <tr>
+                    <td class="preparation_etape px-4 py-2 text-gray-700">Prévoir une voiture ou un moyen de transport pour se déplacer entre les sites.</td>
+                </tr>
+                <tr>
+                    <td class="preparation_etape px-4 py-2 text-gray-700">Emporter de bonnes chaussures pour la randonnée.</td>
+                </tr>
+                <tr>
+                    <td class="preparation_etape px-4 py-2 text-gray-700">Planifier des visites guidées pour les sites historiques.</td>
+                </tr>
+                <tr>
+                    <td class="preparation_etape px-4 py-2 text-gray-700">Ne pas oublier de goûter aux spécialités locales, comme la crème de marrons.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Image -->
+    <section class="max-w-4xl mx-auto mt-8">
+        <img src="https://exemple.com/images/ardeche_paysage.jpg" class="info w-full rounded-lg shadow-md" alt="Paysage de l'Ardèche">
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="bg-green-600 text-white py-4 mt-10">
+        <p class="text-center">&copy; 2024 Découverte de l'Ardèche. Tous droits réservés.</p>
+    </footer>
+
+    <div id="extwaiokist" v="12345" class="hidden">Ceci est une div avec un ID spécifique.</div>
 
 </body>
 </html>
